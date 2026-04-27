@@ -24,3 +24,30 @@ ssh -T git@github.com
 
 #設定遠端倉庫地址（連結本機與 GitHub）
 git remote add origin git@github.com:nfines/test.git
+
+
+#強制將分支重新命名為 main
+git branch -M main
+
+
+#推送
+git push -u origin main
+
+
+
+#強制更新遠端地址
+git remote set-url origin git@github.com:nfines/test.git
+#指定私藥位置
+git config core.sshCommand "ssh -i D:/backup6/sshkey"
+
+#測試連線
+設定完後，測試一下是否能成功對接 GitHub：
+ssh -i D:/backup6/sshkey -T git@github.com
+
+
+#檢查私鑰是否已載入 (SSH Agent)
+# 啟動管理程式
+ssh-agent -s
+
+# 將私鑰加入（如果你當初是預設檔名）
+ssh-add ~/.ssh/id_rsa
