@@ -1,0 +1,26 @@
+https://www.youtube.com/watch?v=a9T7dqDtRaY
+
+
+
+#本機目前測試用資料
+git@github.com:nfines/test.git
+
+
+#產生ssh-key
+ssh-keygen -t rsa -C "psnote"
+
+產生 SSH RSA 金鑰步驟
+開啟終端機 (Terminal/Git Bash)。
+執行產生指令：建議使用 4096 位元以確保安全。
+bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+-t rsa: 指定使用 RSA 演算法。
+-b 4096: 指定金鑰長度為 4096 位元（預設為 2048）。
+-C: 添加註解（通常是郵件地址）以識別金鑰。
+
+
+#測試是否連通
+ssh -T git@github.com
+
+#設定遠端倉庫地址（連結本機與 GitHub）
+git remote add origin git@github.com:nfines/test.git
